@@ -42,7 +42,7 @@ class iMSCP_Plugin_Manager
 	/**
 	 * @const string Plugin API version
 	 */
-	const PLUGIN_API_VERSION = '0.2.4';
+	const PLUGIN_API_VERSION = '0.2.5';
 
 	/**
 	 * @const int Action failure
@@ -418,6 +418,18 @@ class iMSCP_Plugin_Manager
 			write_log(sprintf('Plugin Manager: Unknown plugin %s', $pluginName), E_USER_ERROR);
 			throw new iMSCP_Plugin_Exception(sprintf('Plugin Manager: Unknown plugin %s', $pluginName));
 		}
+	}
+
+	/**
+	 * Update plugin info
+	 *
+	 * @param string $pluginName Plugin Name
+	 * @param array $info Plugin info
+	 * @return void
+	 */
+	public function updatePluginInfo($pluginName, array $info)
+	{
+		exec_query('UPDATE plugin SET plugin_info = ? WHERE plugin_name = ?', array(json_encode($info), $pluginName));
 	}
 
 	/**
@@ -1392,18 +1404,6 @@ class iMSCP_Plugin_Manager
 				)
 			);
 		}
-	}
-
-	/**
-	 * Update plugin info
-	 *
-	 * @param string $pluginName Plugin Name
-	 * @param array $info Plugin info
-	 * @return void
-	 */
-	protected function updatePluginInfo($pluginName, array $info)
-	{
-		exec_query('UPDATE plugin SET plugin_info = ? WHERE plugin_name = ?', array(json_encode($info), $pluginName));
 	}
 
 	/**
