@@ -8,24 +8,30 @@ ADDONS:
 	- Fixed: Awstats - Cron task is not running (dynamic mode)
 
 ENGINE:
+	- Added: onLoadTemplate event in all server implementations
 	- Fixed: DNS sub templates must be passed-in to event listeners
+	- Fixed: Domain owner unique identifier must be passed-in to related servers and addons
 
 GUI:
 	- Fixed: jQuery library included twice in simple layout
+	- Fixed: Ticket notification won't be delivered (Support ticket feature)
 	- Fixed: Wrong events triggered in client/profile.php
+	- Updated: Datatable translations
 
 PLUGINS:
 	- Changed: iMSCP_Plugin_Manager::updatePluginInfo() method is now public
+	- Fixed: Plugin Store link
 	- Updated: Plugin API to version 0.2.5 (changes are backward compatible)
 
 SETUP:
-	- Changed: imscp group is now allowed to read all files from configuration directory
+	- Changed: imscp group is now allowed to read all files from i-MSCP configuration directory
 
 VENDOR:
 	- Updated: DataTables to version 1.9.4
 
 Tickets:
 	- Fixed #1014: Bug - Link for "cancel" in Reseller - edit Domain is wrong
+	- Fixed #1020: Bug - Wrong SQL query - Search feature
 
 ------------------------------------------------------------------------------------------------------------------------
 1.1.0
