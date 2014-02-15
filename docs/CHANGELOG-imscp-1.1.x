@@ -7,14 +7,19 @@ i-MSCP ChangeLog
 ADDONS:
 	- Fixed: Awstats - Cron task is not running (dynamic mode)
 
+CONFIGS:
+	- Removed: MySQL 5.1 and therefore MariaDB 5.3 support (no longer supported by PhpMyAdmin)
+
 ENGINE:
 	- Added: onLoadTemplate event in all server implementations
 	- Fixed: DNS sub templates must be passed-in to event listeners
 	- Fixed: Domain owner unique identifier must be passed-in to related servers and addons
+	- Fixed: Missing CLEAR method in iMSCP::Config handler
 
 GUI:
 	- Fixed: jQuery library included twice in simple layout
 	- Fixed: Ticket notification won't be delivered (Support ticket feature)
+	- Fixed: Wrong download link for new release
 	- Fixed: Wrong events triggered in client/profile.php
 	- Updated: Datatable translations
 
@@ -31,6 +36,7 @@ VENDOR:
 
 Tickets:
 	- Fixed #1014: Bug - Link for "cancel" in Reseller - edit Domain is wrong
+	- Fixed #1019: Bug - Unable to create customer with SQL feature set to disabled
 	- Fixed #1020: Bug - Wrong SQL query - Search feature
 	- Fixed #1022: Defect - standard email aliases not created while adding domain alias
 
