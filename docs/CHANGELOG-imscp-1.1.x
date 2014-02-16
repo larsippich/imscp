@@ -7,8 +7,9 @@ i-MSCP ChangeLog
 ADDONS:
 	- Fixed: Awstats - Cron task is not running (dynamic mode)
 
-CONFIGS:
-	- Removed: MySQL 5.1 and therefore MariaDB 5.3 support (no longer supported by PhpMyAdmin)
+CONFIGS
+	- Added: bash-completion package
+	- Disabled: Opcache support (PHP5.5)
 
 ENGINE:
 	- Added: onLoadTemplate event in all server implementations
@@ -39,6 +40,8 @@ Tickets:
 	- Fixed #1019: Bug - Unable to create customer with SQL feature set to disabled
 	- Fixed #1020: Bug - Wrong SQL query - Search feature
 	- Fixed #1022: Defect - standard email aliases not created while adding domain alias
+	- Fixed #1024: Bug - Apache2 ITK server implementation - Error on update
+	- Fixed #1025: Bug - Notice: Undefined index: _: Localised language
 
 ------------------------------------------------------------------------------------------------------------------------
 1.1.0
