@@ -1,13 +1,17 @@
 i-MSCP ChangeLog
 ~~~~~~~~~~~~~~~~
+
 ------------------------------------------------------------------------------------------------------------------------
 1.1.1
 ------------------------------------------------------------------------------------------------------------------------
 
+2014-02-16: Laurent Declercq
+	- RELEASE i-MSCP 1.1.1
+
 ADDONS:
 	- Fixed: Awstats - Cron task is not running (dynamic mode)
 
-CONFIGS
+CONFIGS:
 	- Added: bash-completion package
 	- Disabled: Opcache support (PHP5.5)
 
