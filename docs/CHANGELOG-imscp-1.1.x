@@ -2,11 +2,24 @@ i-MSCP ChangeLog
 ~~~~~~~~~~~~~~~~
 
 ------------------------------------------------------------------------------------------------------------------------
-Git stable
+1.1.2
 ------------------------------------------------------------------------------------------------------------------------
+
+2014-02-27: Laurent Declercq
+	- RELEASE i-MSCP 1.1.2
+
+CONFIGS:
+	- Replaced: apache2-suexec/apache2-suexec-pristine packages by apache2-suexec-custom package
 
 ENGINE:
 	- Fixed: Old passwords are still working even when they are updated (courier-authdaemon)
+
+PLUGINS:
+	- Added: __need_change__ field which ensure plugin change on plugin reactivation
+	- Changed: The updatePluginList action is no longer automatically triggered when a plugin is uploaded
+	- Fixed: db_schema_version info field which is used by some plugin must be persistent
+	- Fixed: Plugin info are partially updated
+	- Updated: Plugin API to version 0.2.6 (changes are backward compatible)
 
 Tickets:
 	- Fixed #1021: Bug - Some htusers are not added into the htgroup file
