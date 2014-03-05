@@ -207,7 +207,7 @@ function admin_pluginManagerGeneratePluginList($tpl, $pluginManager)
 		$tpl->assign('PLUGINS_BLOCK', '');
 		set_page_message(tr('Plugin list is empty.'), 'info');
 	} else {
-		sort($pluginList, SORT_NATURAL);
+		natsort($pluginList);
 		$cacheFile = PERSISTENT_PATH . '/protected_plugins.php';
 
 		foreach ($pluginList as $pluginName) {
@@ -602,9 +602,7 @@ if (!empty($_REQUEST) || !empty($_FILES)) {
 	} elseif (!empty($_FILES)) {
 		if (admin_pluginManagerUploadPlugin($pluginManager)) {
 			set_page_message(tr('Plugin successfully uploaded.'), 'success');
-			# This is no longer done automatically because in some cases, user want restore their own configuration
-			# files before triggering plugin update
-			#admin_pluginManagerUpdatePluginList($pluginManager);
+			admin_pluginManagerUpdatePluginList($pluginManager);
 		}
 	}
 
