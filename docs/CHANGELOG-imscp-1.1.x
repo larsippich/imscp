@@ -1,5 +1,38 @@
 i-MSCP ChangeLog
 ~~~~~~~~~~~~~~~~
+------------------------------------------------------------------------------------------------------------------------
+1.1.3
+------------------------------------------------------------------------------------------------------------------------
+
+2014-03-11: Laurent Declercq
+	- RELEASE i-MSCP 1.1.3
+
+ADDONS:
+	- Added: onLoadTemplate events
+	- Removed: PasswordChanger install part (Roundcube). This plugin will be part of the RoundcubePlugins plugin
+	- Updated: Net2ftp installer
+
+ENGINE:
+	- Added: Missing onLoadTemplate events
+
+GUI:
+	- Added: Disable custom DNS records feature in case of external DNS server usage
+
+INSTALLER:
+	- Added: External server option for DNS server
+	- Fixed: Local resolver must be disabled in case of external DNS server usage
+	- Fixed: When switching to external DNS server, uninstallation of current DNS server must be triggered
+
+PLUGINS:
+	- Added: iMSCP_Plugin::migrateDb() method which allow to migrate plugin database schema
+	- Fixed: Plugin info not updated when the plugin is deactivated which prevent update to be triggered when needed
+	- Readded: Automatic triggering of the updatePluginList action after plugin upload
+	- Updated: Plugin API to version 0.2.7 (changes are backward compatible)
+
+Tickets:
+	- Fixed #0993: Bug - Inconsistent data in database for created_by field from customers
+	- Fixed #1032: Bug - Use of undefined constant SORT_NATURAL (PHP < 5.4)
+	- Fixed #1034: Defect - Policyd-Weight Addon - Configuration mismatch
 
 ------------------------------------------------------------------------------------------------------------------------
 1.1.2
